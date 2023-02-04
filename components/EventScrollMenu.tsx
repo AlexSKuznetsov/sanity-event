@@ -1,13 +1,14 @@
-import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu'
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid'
 import cn from 'classnames'
 import {
+  Dispatch,
+  MouseEventHandler,
+  SetStateAction,
   useContext,
   useMemo,
-  MouseEventHandler,
-  Dispatch,
-  SetStateAction,
 } from 'react'
-import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid'
+import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu'
+
 import { EventCard } from './'
 
 type PropsType = {

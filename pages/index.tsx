@@ -1,17 +1,18 @@
-import { useState, useEffect } from 'react'
-import { client } from '../sanity/lib/client'
-import { groq } from 'next-sanity'
 import { getMonth } from 'date-fns'
-import { months } from '../lib/constants'
+import { GetServerSideProps } from 'next'
+import { groq } from 'next-sanity'
+import { useEffect,useState } from 'react'
+
 import {
-  DaysScrollMenuItems,
   CurrentYear,
+  DaysScrollMenuItems,
+  EventScrollMenu,
   Header,
   Months,
   Tags,
-  EventScrollMenu,
 } from '../components'
-import { GetServerSideProps } from 'next'
+import { months } from '../lib/constants'
+import { client } from '../sanity/lib/client'
 
 type PropsType = {
   title: string

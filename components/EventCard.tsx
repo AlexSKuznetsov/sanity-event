@@ -1,14 +1,15 @@
-import Image from 'next/image'
-import Link from 'next/link'
 import {
+  ChevronRightIcon,
   ClockIcon,
   MapPinIcon,
   TicketIcon,
-  ChevronRightIcon,
 } from '@heroicons/react/24/outline'
-import { Tags } from './'
-import { Dispatch, SetStateAction } from 'react'
 import { format } from 'date-fns'
+import Image from 'next/image'
+import Link from 'next/link'
+import { Dispatch, SetStateAction } from 'react'
+
+import { Tags } from './'
 
 type EventInfo = {
   eventName: string

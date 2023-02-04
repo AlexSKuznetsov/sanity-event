@@ -1,7 +1,7 @@
 import cn from 'classnames'
+import { format,isToday } from 'date-fns'
 import { useContext } from 'react'
 import { VisibilityContext } from 'react-horizontal-scrolling-menu'
-import { isToday, format } from 'date-fns'
 
 type PropsType = {
   onClick: (id: React.ContextType<typeof VisibilityContext>) => void

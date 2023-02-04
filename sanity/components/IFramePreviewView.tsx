@@ -59,6 +59,7 @@ function PagePreviewWithSecret(props: {
   const secret = suspend(
     () =>
       getPreviewSecret({
+        // @ts-ignore
         client,
         id: previewSecretDocumentId,
         createIfNotExists: true,
