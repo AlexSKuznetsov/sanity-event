@@ -14,15 +14,19 @@
     "singleQuote": true
   },
   "dependencies": {
+    "@heroicons/react": "^2.0.14",
     "@next/font": "^13.1.1",
     "@sanity/demo": "^1.0.1",
     "@sanity/vision": "^3.1.4",
     "@tailwindcss/typography": "^0.5.8",
+    "classnames": "^2.3.2",
+    "date-fns": "^2.29.3",
     "next": "^13.1.1",
     "next-sanity": "^3.1.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sanity": "^3.1.4",
+    "react-horizontal-scrolling-menu": "^3.2.3",
+    "sanity": "^3.2.5",
     "styled-components": "^5.3.6"
   },
   "devDependencies": {
