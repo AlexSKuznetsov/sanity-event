@@ -1,5 +1,6 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid'
 import cn from 'classnames'
+import { EventInfo } from 'pages'
 import {
   Dispatch,
   MouseEventHandler,
@@ -15,61 +16,28 @@ type PropsType = {
   setSelectedTag: Dispatch<SetStateAction<string[]>>
   selectedTags: string[]
   selectedDay: string
-}
-
-const event = {
-  eventName: 'PartyName - Venue',
-  tags: ['House', 'Techno'],
-  eventAddress: 'Leidsekade 22, 1171MG Amsterdam',
-  eventTime: '23:00 - 05:00',
-  eventPrice: 25,
-  eventSlug: 'some-link',
+  events: EventInfo[]
 }
 
 export const EventScrollMenu: React.FC<PropsType> = ({
   selectedTags,
   setSelectedTag,
   selectedDay,
+  events,
 }) => {
   return (
     <div className="my-2">
       <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
-        <EventCard
-          selectedTags={selectedTags}
-          setSelectedTag={setSelectedTag}
-          selectedDay={selectedDay}
-          eventInfo={event}
-        />
-        <EventCard
-          selectedTags={selectedTags}
-          setSelectedTag={setSelectedTag}
-          selectedDay={selectedDay}
-          eventInfo={event}
-        />
-        <EventCard
-          selectedTags={selectedTags}
-          setSelectedTag={setSelectedTag}
-          selectedDay={selectedDay}
-          eventInfo={event}
-        />
-        <EventCard
-          selectedTags={selectedTags}
-          setSelectedTag={setSelectedTag}
-          selectedDay={selectedDay}
-          eventInfo={event}
-        />
-        <EventCard
-          selectedTags={selectedTags}
-          setSelectedTag={setSelectedTag}
-          selectedDay={selectedDay}
-          eventInfo={event}
-        />
-        <EventCard
-          selectedTags={selectedTags}
-          setSelectedTag={setSelectedTag}
-          selectedDay={selectedDay}
-          eventInfo={event}
-        />
+        {events.map((el) => (
+          <EventCard
+            key={el._id}
+            itemId={el._id}
+            eventInfo={el}
+            selectedDay={selectedDay}
+            selectedTags={selectedTags}
+            setSelectedTag={setSelectedTag}
+          />
+        ))}
       </ScrollMenu>
     </div>
   )

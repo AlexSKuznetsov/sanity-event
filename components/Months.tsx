@@ -1,7 +1,7 @@
 import cn from 'classnames'
 import { Dispatch, SetStateAction } from 'react'
 
-import { months } from '../lib/constants'
+import { MONTHS } from '../lib/constants'
 
 type PropsType = {
   selectedMonth: string
@@ -14,7 +14,7 @@ export const Months: React.FC<PropsType> = ({
 }) => {
   return (
     <div className="my-4 flex justify-between">
-      {months.map((month) => (
+      {MONTHS.map((month) => (
         <div
           key={month}
           onClick={() => setSelectedMonth(month)}

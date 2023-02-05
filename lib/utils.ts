@@ -1,8 +1,8 @@
-import { months } from './constants'
+import { MONTHS } from './constants'
 
 export const getDates = (currMonth: string) => {
   const currentDate = new Date()
-  const currentMonth = months.findIndex((month) => month === currMonth)
+  const currentMonth = MONTHS.findIndex((month) => month === currMonth)
   const currentYear = currentDate.getFullYear()
   const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate()
   const datesArray = Array.from(

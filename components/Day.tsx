@@ -1,5 +1,5 @@
 import cn from 'classnames'
-import { format,isToday } from 'date-fns'
+import { format, isToday } from 'date-fns'
 import { useContext } from 'react'
 import { VisibilityContext } from 'react-horizontal-scrolling-menu'
 
@@ -41,9 +41,9 @@ export const Day: React.FC<PropsType> = ({
     <>
       <div
         className={cn(
-          'mx-2 w-[120px] cursor-pointer flex-row items-center justify-center rounded-lg bg-white py-2 px-2 font-bold',
+          'select-noneflex-row mx-2 w-[100px] cursor-pointer items-center justify-center rounded-lg bg-white py-2 px-2 font-bold shadow-lg hover:bg-blue-100 hover:text-gray-800 hover:shadow-xl',
           {
-            'border border-red-500 text-red-500 ': selected,
+            'border-4 border-red-500 text-red-500 ': selected,
           }
         )}
         onClick={() => onClick(visibility)}
