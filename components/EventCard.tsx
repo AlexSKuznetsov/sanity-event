@@ -7,11 +7,11 @@ import {
 import { format } from 'date-fns'
 import Image from 'next/image'
 import Link from 'next/link'
-import { EventInfo } from '../pages/index'
-import { Dispatch, SetStateAction } from 'react'
 import { useNextSanityImage } from 'next-sanity-image'
-import { client } from '../sanity/lib/client'
+import { Dispatch, SetStateAction } from 'react'
 
+import { EventInfo } from '../pages/index'
+import { client } from '../sanity/lib/client'
 import { Tags } from './'
 
 type PropsType = {

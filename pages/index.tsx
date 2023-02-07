@@ -1,8 +1,9 @@
+import { SanityImageSource } from '@sanity/image-url/lib/types/types'
 import { format, getMonth } from 'date-fns'
 import { GetServerSideProps } from 'next'
 import { groq } from 'next-sanity'
 import { useCallback, useEffect, useState } from 'react'
-import { SanityImageSource } from '@sanity/image-url/lib/types/types'
+
 import {
   CurrentYear,
   DaysScrollMenuItems,

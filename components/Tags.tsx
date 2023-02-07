@@ -1,6 +1,7 @@
+import { XMarkIcon } from '@heroicons/react/20/solid'
 import cn from 'classnames'
 import { Dispatch, SetStateAction, useCallback } from 'react'
-import { XMarkIcon } from '@heroicons/react/20/solid'
+
 import { TagType } from '../pages/index'
 
 type PropsType = {
