@@ -29,7 +29,7 @@ export default function IndexPage({ title, tags }: PropsType) {
   const [selectedTags, setSelectedTag] = useState<string[]>([])
   const [eventsState, setEventsState] = useState<EventInfo[]>([])
 
-  const fetchEvent = useCallback(async () => {
+  const fetchEvents = useCallback(async () => {
     const selectedDate = format(new Date(selectedDay), 'yyyy-MM-dd')
     const match =
       selectedTags.length === 0
@@ -48,12 +48,12 @@ export default function IndexPage({ title, tags }: PropsType) {
 
   useEffect(() => {
     if (selectedDay && selectedTags) {
-      fetchEvent()
+      fetchEvents()
     }
-  }, [selectedTags, selectedDay, fetchEvent])
+  }, [selectedTags, selectedDay, fetchEvents])
 
   return (
-    <div className="m-auto max-w-[70%]">
+    <div className="m-auto sm:max-w-4xl">
       <Header title={title} />
       <CurrentYear />
       <Months
@@ -65,7 +65,7 @@ export default function IndexPage({ title, tags }: PropsType) {
         selectedDay={selectedDay}
         setSelectedDay={setSelectedDay}
       />
-      <div className="my-4 ml-6 flex max-w-md">
+      <div className="my-4 mx-2 flex max-w-md md:mx-6">
         <Tags
           tags={tags}
           setSelectedTag={setSelectedTag}
@@ -104,7 +104,7 @@ export type EventInfo = {
   eventUrl: string
 }
 
-// initial loading datas like page header, all existing tags and all events
+// initial loading datas like page header and all existing tags
 export const getServerSideProps: GetServerSideProps = async () => {
   const pageTitleQuery = groq`*[_type == 'pageTitle'][0]`
   const tagsQuery = groq`*[_type == 'tags']{'name': genre, _id, 'color': color.hex}`

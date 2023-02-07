@@ -4,5 +4,5 @@ export const CurrentYear = () => {
   const currentDate = new Date()
   const currentYear = getYear(currentDate)
 
-  return <div className="text-md mb-2">{currentYear}</div>
+  return <div className="mx-5  flex justify-start text-sm ">{currentYear}</div>
 }

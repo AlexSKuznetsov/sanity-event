@@ -6,7 +6,9 @@ import {
   MouseEventHandler,
   SetStateAction,
   useContext,
+  useEffect,
   useMemo,
+  useRef,
 } from 'react'
 import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu'
 
@@ -19,15 +21,31 @@ type PropsType = {
   events: EventInfo[]
 }
 
+type scrollVisibilityApiType = React.ContextType<typeof VisibilityContext>
+
 export const EventScrollMenu: React.FC<PropsType> = ({
   selectedTags,
   setSelectedTag,
   selectedDay,
   events,
 }) => {
+  const apiRef = useRef({} as scrollVisibilityApiType)
+
+  useEffect(() => {
+    if (events.length > 0) {
+      apiRef.current?.scrollToItem?.(
+        // @ts-ignore
+        apiRef.current?.getItemElementById(selectedDay),
+        'smooth',
+        'center',
+        'nearest'
+      )
+    }
+  }, [selectedDay, events])
+
   return (
     <div className="my-2">
-      <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
+      <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow} apiRef={apiRef}>
         {events.map((el) => (
           <EventCard
             key={el._id}

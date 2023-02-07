@@ -13,12 +13,12 @@ export const Months: React.FC<PropsType> = ({
   setSelectedMonth,
 }) => {
   return (
-    <div className="my-4 flex justify-between">
+    <div className="my-4 mx-2 flex flex-wrap justify-start  ">
       {MONTHS.map((month) => (
         <div
           key={month}
           onClick={() => setSelectedMonth(month)}
-          className={cn('cursor-pointer text-sm', {
+          className={cn('text-md mx-2 my-1 cursor-pointer', {
             ['border-b-2 border-blue-600 font-semibold text-blue-600']:
               selectedMonth === month,
           })}
